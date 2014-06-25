@@ -1,0 +1,47 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<title>pueba</title>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.qtip.js"></script>   
+<link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
+<style>
+.con-nota {
+    display:inline-block;
+}
+</style>
+<script>
+var classConNota = 'con-nota';
+$(document).ready(function(){
+    $('.'+classConNota).each(function(index,element){
+        $(element).qtip({
+           content: {
+              text: 'Cargando...',
+              ajax: {
+                 url: $(element).attr('description'),
+              }
+           },
+            hide: {
+                delay:1000,
+                fixed: true
+            },
+            events : {
+                show : function() {
+                    $('.'+classConNota).qtip('hide');
+                }
+            }
+        });
+    });
+});
+$(':not(.con-nota)').click(function(){
+    $('.'+classConNota).qtip('hide');
+});
+</script>
+</head>
+<body>
+
+<div class="con-nota" description="lucro.html">lucro en la educación</div>
+<div class="con-nota" description="desmunicipalizacion.html">desmunicipalizacion</div>
+</body>
+</html>

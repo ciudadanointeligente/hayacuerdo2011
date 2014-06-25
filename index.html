@@ -1,0 +1,395 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta property="og:image" content="http://acuerdoeducacion.ciudadanointeligente.org/images/hayacuerdo.png"/>
+    <title>Acuerdo Educación</title>
+<link rel="stylesheet" type="text/css" href="css/style.css"> 
+<!--[if IE]>
+        <link rel="stylesheet" type="text/css" href="css/style-ie.css" />
+<![endif]-->
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.qtip.js"></script>   
+<script>
+var classConNotaEstudiantes = 'singlePropEst';
+var classConNotaGobierno = 'singlePropGob';
+var bothSelector = '.'+classConNotaEstudiantes+',.'+classConNotaGobierno;
+$(document).ready(function(){
+    var qtipBasicConfig = {
+                    content: {
+                      text: 'Cargando...'
+                   },
+                    hide: {
+                        delay:1000,
+                        fixed: true
+                    },
+                    events : {
+                        show : function() {
+                            $(bothSelector).qtip('hide');
+                        }
+                    }
+                };
+    var qtipGobConfig = {
+                    content: {
+                      text: 'Cargando...'
+                   },
+                    hide: {
+                        delay:1000,
+                        fixed: true
+                    },
+                    events : {
+                        show : function() {
+                            $(bothSelector).qtip('hide');
+                        }
+                    },
+                    position : {
+                        my:'top right',
+                        at:'bottom left',
+                        effect:'show'
+                    }
+                };
+    $(bothSelector).each(function(index,element){
+        if ($(element).hasClass(classConNotaGobierno)) {
+            qtipGobConfig.content.ajax = {url: $(element).attr('description')};
+            $(element).qtip(qtipGobConfig);
+        }
+        if ($(element).hasClass(classConNotaEstudiantes)) {
+            qtipBasicConfig.content.ajax = {url: $(element).attr('description')};
+            $(element).qtip(qtipBasicConfig);
+        }
+    });
+});
+
+$(':not('+bothSelector+')').click(function(){
+    $(bothSelector).qtip('hide');
+});
+</script>
+
+ <link rel="stylesheet" type="text/css" href="css/jquery.qtip.css" />
+<style>
+.con-nota {
+    display:inline-block;
+}
+</style> 
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-25429026-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script> 
+</head>
+<body>
+        <!-- AddThis Button BEGIN -->
+        <div class="addthis_toolbox addthis_default_style ">
+            <a class="addthis_button_facebook_like" style="width: 150px;" fb:like:layout="button_count"></a>
+            <a class="addthis_button_tweet"></a>
+            <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+            <a class="addthis_counter addthis_pill_style"></a>
+        </div>
+        
+        <div class="bulb_container">
+        <div class="fci-ampolleta"><iframe src="http://ciudadanointeligente.org/assets/bulb_light.html?wmode=transparent" width="120px" height="220" frameborder="0"></iframe></div>
+        </div>
+        
+        <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4e5d11d176df6bdd"></script>
+        
+        <!-- AddThis Button END -->
+    
+    <div id="todo">
+    <div id="wrapper">
+    
+        <div id="header"> <a href="http://acuerdoeducacion.ciudadanointeligente.org"><img src="http://acuerdoeducacion.ciudadanointeligente.org/images/logo.png" width="325" height="105" alt="Hay Acuerdo?" title="Hay Acuerdo?" /></a>
+        
+      </div>
+        
+        <div id="content">
+        	<div id="pizarra">
+            	<div class="intro">
+                    <p class="textoIntro"> Acuerdoeducacion.cl te ayuda entender de un modo claro y visible, cuales son las reivindicaciones del movimiento estudiantil, cuáles han sido las propuestas del Gobierno, dónde están los desacuerdos y acuerdos que permitan lograr una solución. 
+                    <br />
+                        <div class="simbologia">
+                             <img  class="pl_colores" src="http://acuerdoeducacion.ciudadanointeligente.org/images/pl_roja.png" /> Sin acuerdo <img class="pl_colores" src="http://acuerdoeducacion.ciudadanointeligente.org/images/pl_amarilla.png" /> Acuerdo parcial <img class="pl_colores" src="http://acuerdoeducacion.ciudadanointeligente.org/images/pl_verde.png" /> Con acuerdo
+                        </div>
+                    </p>
+                    
+                </div>    
+                <div class="titulares">
+                	<h2>---  ESTUDIANTES  ---</h2>
+                    <h2>---  GOBIERNO  ---</h2>
+                    
+                </div>
+            
+            <!--financiamiento-->
+            	<div class="headingContainer">
+                	<h2> Financiamiento </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/1.html">
+                        <p>Garantizar aportes basales a las Universidades del Consejo de Rectores
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/13.html">
+                        <p>Fondos y aportes basales contra cumplimiento de metas
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+                 <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/2.html">
+                        <p>Eliminación de la banca privada en el financiamiento de la Educación, incluyendo el Crédito con Aval del Estado.
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/14.html">
+                        <p>Baja del costo del crédito y perfeccionamiento del sistema de becas
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/3.html">
+                        <p>Término del financiamiento compartido
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/15.html">
+                        <p>Perfeccionar el sistema de financiamiento compartido
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/financiamiento-->
+            <!--Lucro-->
+            	<div class="headingContainer">
+                	<h2> Lucro </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/4.html">
+                        <p>Fin efectivo al lucro en todo el sistema de educación chilena
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/16.html">
+                        <p>Mayor control sobre las instituciones que lucran con recursos públicos
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/Lucro-->
+            
+              <!--Acceso-->
+            	<div class="headingContainer">
+                	<h2> Acceso </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline yellow">
+                	<div class="singlePropEst" description="propuestas_estudiantes/5.html">
+                        <p>Generar nuevas formas de acceso para la Educación Superior,
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/17.html">
+                        <p>Perfeccionar el sistema de admisión
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/acceso-->
+             <!--Calidad-->
+            	<div class="headingContainer">
+                	<h2> Calidad </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/6.html">
+                        <p>Creación de una red técnica estatal
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/18.html">
+                        <p>Fortalecer la oferta educativa de educación escolar técnico profesional
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/7.html">
+                        <p>Creación de una carrera docente
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/19.html">
+                        <p>Modernización de la carrera docente
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+                <!---->
+    			<div class="propline yellow">
+                	<div class="singlePropEst" description="propuestas_estudiantes/8.html">
+                        <p>Garantizar que las Instituciones Educacionales provean educación de calidad
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/20.html">
+                        <p>Mejorar exigencia y rigurosidad de acreditación de calidad
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/calidad-->
+            <!--Democratización-->
+            	<div class="headingContainer">
+                	<h2> Democratización </h2>
+                    
+                </div>
+                <!---->
+    			<ul class="propline green">
+                	<li class="singlePropEst" description="propuestas_estudiantes/9.html">
+                        <p>Eliminar trabas legales que prohíben la organización y participación de los estamentos del sistema educativo
+                        </p>
+                    	<a href="#"></a>
+                    </li>
+                    <li class="iconoAcuerdo"></li>
+                    <li class="singlePropGob" description="propuestas_gobierno/21.html">
+                        <p>Derogar norma que impide participación estudiantil
+                        </p>
+                    	<a href="#"></a>
+                    </li>
+                </ul>
+            <!--/demcratizacion-->
+            <!--administración-->
+            	<div class="headingContainer">
+                	<h2> Administración </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline red">
+                	<div class="singlePropEst" description="propuestas_estudiantes/10.html">
+                        <p>Desmunicipalización efectiva de la Educación Básica y Secundaria
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/22.html">
+                        <p>Descentralización de la administración de la educación escolar
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/administracion-->
+            <!--garantías-->
+            	<div class="headingContainer">
+                	<h2> Garantías </h2>
+                    
+                </div>
+                <!---->
+    			<div class="propline yellow">
+                	<div class="singlePropEst" description="propuestas_estudiantes/11.html">
+                        <p>Garantizar Derechos educativos y lingüísticos de los pueblos originarios
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/23.html">
+                        <p>Promover la interculturalidad en la educación superior
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+                 <!---->
+    			<div class="propline yellow">
+                	<div class="singlePropEst" description="propuestas_estudiantes/12.html">
+                        <p>Educación garantizada constitucionalmente como Derecho Social
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                    <div class="iconoAcuerdo"></div>
+                    <div class="singlePropGob" description="propuestas_gobierno/24.html">
+                        <p>Reforma constitucional que garantiza calidad de educación pública
+                        </p>
+                    	<a href="#"></a>
+                    </div>
+                </div>
+            <!--/garantías-->
+            
+            </div> 
+                 
+        </div>	
+        <div class="marco">
+            <div class="dipity_embed" style="width:930px"><iframe width="930" height="400" src="http://www.dipity.com/fci/Movimiento-Estudiantil-Chile/?mode=embed&z=7day&bgcolor=%23d4d0d1#tl" style="border:1px solid #CCC;"></iframe>
+            <p style="margin:0;font-family:Arial,sans;font-size:13px;text-align:center">
+            </p>
+           </div>
+        </div>
+        
+        <br/>
+        <div class="marco">
+            <object style="float: left;" width="460" height="366"><param name="movie" value="http://www.youtube.com/p/C0516F53ABA6CD12?version=3&hl=es_ES&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/p/C0516F53ABA6CD12?version=3&hl=es_ES&fs=1" type="application/x-shockwave-flash" width="460" height="366" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+  
+                <object style="margin-left: 10px; float: left;" width="460" height="366"><param name="movie" value="http://www.youtube.com/p/C69B65F5F6413324?version=3&hl=es_ES&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/p/C69B65F5F6413324?version=3&hl=es_ES&fs=1" type="application/x-shockwave-flash" width="460" height="366" allowscriptaccess="always" allowfullscreen="true"> </embed></object>
+        </div>
+        
+        <iframe width="950px" height="300" frameborder="0" style="overflow: hidden;" src="http://ciudadanointeligente.org/assets/fcifooter.html">
+
+<div style="clear: both;"></div>
+<div class="social">
+	<a href="http://www.facebook.com/ciudadanointeligente" title="facebook.com/ciudadanointeligente" alt="facebook.com/ciudadanointeligente"><img src="images/facebook.png" width="85" height="51" /></a>
+	<a href="http://twitter.com/#!/ciudadanoi" title="@ciudadanoi" alt="@ciudadanoi">  <img src="images/twitter.png" width="83" height="57" /></a>
+</div>
+   
+        
+</div>
+
+</div>
+ 	<div class="social2">
+        <a href="http://www.facebook.com/ciudadanointeligente" title="facebook.com/ciudadanointeligente" alt="facebook.com/ciudadanointeligente"><img src="images/facebook2.png" /></a>
+        <a href="http://twitter.com/#!/ciudadanoi" title="@ciudadanoi" alt="@ciudadanoi">  <img src="images/twitter2.png" /></a>
+	</div>
+<div style=" z-index: 400; bottom: 32px; margin-bottom: 7px;position: relative; text-align: center; background: url(images/bg_white_20.png) repeat scroll 0 0 transparent; padding: 5px;"> Este sitio está optimizado para <a href="http://www.mozilla.org/es-ES/firefox/" style="text-decoration: underline; font-weight:bold;">Mozilla Firefox</a>, <a href="http://www.google.com/chrome?hl=es-419"style="text-decoration: underline; font-weight:bold;">Google Chrome</a>, <a href="http://www.opera.com/download/" style="text-decoration: underline; font-weight:bold;">Opera</a> y <a href="http://www.apple.com/es/safari/download/" style="text-decoration: underline; font-weight:bold;">Safari</a> en sus versiones actuales. </div>
+    
+    
+    
+    
+    
+    
+    
+</body>
+
+<script type="text/javascript">
+    window._idl = {};
+    _idl.variant = "modal";
+    (function() {
+        var idl = document.createElement('script');
+        idl.type = 'text/javascript';
+        idl.async = true;
+        idl.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'members.internetdefenseleague.org/include/?url=' + (_idl.url || '') + '&campaign=' + (_idl.campaign || '') + '&variant=' + (_idl.variant || 'banner');
+        document.getElementsByTagName('body')[0].appendChild(idl);
+    })();
+</script>
